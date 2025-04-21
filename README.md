@@ -1,82 +1,61 @@
-# Finding-Smallest-Number# 🔽 Find Smallest Element in a Vector (C++)
+# 🔽 Find the Smallest Number in a Vector (C++)
 
-This project contains a simple C++ function that finds the smallest integer in a `std::vector<int>`. It includes basic error handling for empty input vectors.
-
----
-
-## Function Overview
-
-### `int findSmallest(const vector<int>& arr);`
-
-- **Purpose:** Returns the smallest integer in the provided vector.
-- **Error Handling:** Throws `std::invalid_argument` if the vector is empty.
+This C++ program defines a simple function that finds and returns the smallest integer in a given vector of integers. If the vector is empty, it displays an error message.
 
 ---
 
-## File Contents
+##  Description
 
-- `main.cpp` – Contains the `findSmallest` function and a sample usage in `main()`.
+The program includes:
+
+- A function `findSmallest()` that:
+  - Takes a `std::vector<int>` as input.
+  - Returns the smallest number in the vector.
+  - Returns `-1` and displays an error message if the vector is empty.
+  
+- A `main()` function that demonstrates how to use `findSmallest()`.
 
 ---
 
-##  Example Usage
+##  Function Overview
 
 ```cpp
-#include <iostream>
-#include <vector>
-#include <stdexcept>
+int findSmallest(const std::vector<int>& arr);
+Parameters: A vector of integers.
 
-using namespace std;
+Returns: The smallest integer in the vector, or -1 if the vector is empty.
 
-int findSmallest(const vector<int>& arr) {
-    if (arr.empty()) {
-        throw invalid_argument("Array is empty");
-    }
-    int min_val = arr[0];
-    for (int num : arr) {
-        if (num < min_val) {
-            min_val = num;
-        }
-    }
-    return min_val;
-}
+Error Handling: Displays an error message if the vector is empty.
 
-int main() {
-    vector<int> numbers = {15, 3, 7, 9, 2, 18};
-
-    try {
-        int smallest = findSmallest(numbers);
-        cout << "Smallest number: " << smallest << endl;
-    } catch (const invalid_argument& e) {
-        cerr << "Error: " << e.what() << endl;
-    }
-
-    return 0;
-}
- Output Example
-Smallest number: 2
- How to Compile and Run
-Make sure you have a C++ compiler installed (like g++).
-
-Compile:
-bash
-Copy
-Edit
-g++ -std=c++11 -o find_smallest main.cpp
-Run:
-bash
-Copy
-Edit
-./find_smallest
  Requirements
 C++11 or later
 
-C++ compiler (g++, clang++, or MSVC)
+A C++ compiler such as g++, clang++, or MSVC
 
- Error Handling
-If the vector is empty, the function will throw an exception:
+ How to Compile and Run
+ Compile
+g++ -std=c++11 -o find_smallest main.cpp
+Run
 
-javascript
-Error: Array is empty
- License
-This code is free to use and modify for educational and personal use.
+./find_smallest
+ Example Output
+Given the following input vector
+
+std::vector<int> numbers = {10, 5, 8, 1, 12};
+The program will output:
+Smallest number: 1
+If the vector is empty:
+Error: Array is empty.
+
+main.cpp – Contains the full program including the function and the main function for testing.
+This code is free to use and modify for educational or personal use.
+Created by [Anwar mohammed] — feel free to modify and expand!
+
+Let me know if you'd like to add user input, sort the vector, or include multiple test cases in the README!
+
+
+
+
+
+
+
